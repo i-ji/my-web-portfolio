@@ -1,0 +1,401 @@
+/*common*/
+
+body {
+  font-family: -apple-system,BlinkMacSystemFont,
+  "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,
+  "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",
+  "Noto Color Emoji";;
+  color: inherit;
+  margin: 0;
+  background: #f2e5d5;
+}
+
+h1,h2,h3,p {
+  margin: 0;
+}
+
+h2 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  width: calc(100% - 32px);
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/*header*/
+
+header {
+  padding: 16px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  transition: background .3s;
+}
+
+header.scrolled {
+  background: rgba(242, 229, 213, .95);
+  box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+}
+
+header .container {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+header .logo {
+  object-fit: cover;
+}
+
+header .logo img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+header .pc-menu {
+  display: none;
+}
+
+header .pc-menu ul {
+  display: flex;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+header .pc-menu a {
+  display: block;
+  width: 100px;
+  line-height: 40px;
+  text-align: center;
+  transition: background .3s,opacity .3s;
+}
+
+header .pc-menu a:hover {
+  background: #fff;
+  opacity: 0.7;
+}
+
+header .sp-menu {
+  font-size: 32px;
+  cursor: pointer;
+  user-select: none;
+}
+
+
+
+/*hero*/
+
+.hero {
+  height: 350px;
+  width: 100%;
+  background-image: url(img/hero.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  margin-top: 72px;
+}
+
+.hero p {
+  font-size: 32px;
+  color: #f3f3f3;
+  letter-spacing: 2px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+
+/*about*/
+
+.about {
+  padding: 64px 0 0;
+}
+
+.about .pic {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.about .pic img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+}
+
+.about .desc p {
+  text-indent: 1em;
+}
+
+.about .desc p + p {
+  margin-top: 4px;
+}
+
+
+/*skill*/
+
+.skill {
+  padding: 64px 0;
+  overflow: hidden;
+}
+
+.skill .design,
+.skill .front {
+  background: #fff;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.skill h3 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.skill table {
+  width: 100%;
+}
+
+.skill thead th {
+  padding: 8px 0;
+}
+
+.skill th {
+  text-align: left;
+}
+
+.skill .front {
+  margin-top: 16px;
+}
+
+
+/*works*/
+
+.works {
+  padding: 64px 0;
+}
+
+
+/*contact*/
+
+.contact {
+  padding: 64px 0;
+}
+
+.contact p {
+  margin-bottom: 8px;
+}
+
+.contact span {
+  text-decoration: underline;
+  color: blue;
+}
+
+
+/*footer*/
+footer {
+  padding: 32px 0;
+  background: #333;
+  color: #999;
+  text-align: center;
+  font-size: 12px;
+}
+
+
+/*modal-window*/
+
+#modal {
+  background: rgba(0, 0, 0, .4);
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+
+#modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/*hamberger-menu*/
+
+#overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, .95);
+  z-index: 1;
+  text-align: center;
+  transform: translateY(-500px);
+  transition: transform .3s;
+}
+
+#overlay.show {
+  transform: none;
+}
+
+#overlay a {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  line-height: 70px;
+  transition: background .3s;
+}
+
+#overlay a:hover {
+  background: #ccc;
+}
+
+
+/*pc-screen*/
+
+@media screen and (min-width: 600px) {
+  header .sp-menu {
+    display: none;
+  }
+
+  header .pc-menu {
+    display: block;
+  }
+
+  .about .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .about .pic {
+    width: 30%
+  }
+
+  .about .pic img {
+    width: 60%;
+    height: auto;
+    max-width: 120px;
+  }
+
+  .about .desc {
+    width: 70%;
+    padding: 16px;
+  }
+
+  .skill .container {
+    display: flex;
+    gap: 16px;
+  }
+
+  .skill .design,
+  .skill .front {
+    width: calc((100% - 48px) / 2);
+  }
+
+  .skill .design {
+    margin-left: 16px;
+  }
+
+  .skill .front {
+    margin-top: 0;
+    margin-right: 16px;
+  }
+}
+
+/*画像がフワッと現れる処理*/
+
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .3s,transform .3s;
+}
+
+.animate.slide-from-left {
+  transform: translateX(-40px);
+}
+
+.animate.slide-from-right {
+  transform: translateX(40px);
+}
+
+.animate.appear {
+  opacity: 1;
+  transform: none;
+}
+
+@media screen and (min-width: 600px) {
+
+  .animate.slide-from-left {
+    transform: translateY(40px);
+    transition-delay: .1s;
+  }
+
+  .animate.slide-from-right {
+    transform: translateY(40px);
+    transition-delay: .3s;
+  }
+
+}
+
+
+/*文字がバウンドする処理*/
+
+.bounding {
+  animation: bound .6s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes bound {
+  0% {
+    opacity: 0;
+    transform: translateY(-500px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
